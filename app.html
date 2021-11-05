@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Promodoro App</title>
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="timer-content">
+                <h1>Promodoro App</h1>
+
+                <div class="timer">
+                    <figure class="clock">
+                        <div class="time mins">0</div>
+                        <div class="time">:</div>
+                        <div class="time secs">00</div>
+                        <audio
+                            src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3">
+                        </audio>
+                        <svg class="progress-ring" height="120" width="120">
+                          <circle
+                            class="progress-ring__circle"
+                            stroke-width="8"
+                            fill="transparent"
+                            r="50"
+                            cx="60"
+                            cy="60"
+                          />
+                        </svg>
+                    </figure>
+                </div>
+                <div class="buttons-content">
+                    <button class="button start">Start</button>
+                    <button class="button reset">Reset</button>
+                    <button class="button pause">Pause</button>
+                </div>
+                
+            </div>
+            <div class="form-container">
+                <form class="form" action=".">
+                    <label for="focusTime">Select Time</label>
+                    <input type="number" class="" id="focusTime" value="1"/>
+                    <label for="breakTime">Select Break</label>
+                    <input type="number" class="" id="breakTime" value="1"/>
+                    <button class="button button-settings" type="submit">Save Settings</button>
+                </form>
+            </div>
+        </div>
+
+        <!--==================== MAIN JS ====================-->
+        <script src="js/main.js"></script>
+    </body>
+</html>

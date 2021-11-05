@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+:root {
+    --hue-color: 220;
+
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --body-color: hsl(var(--hue-color), 28%, 12%);
+    --container-color: hsl(var(--hue-color), 29%, 8%);
+}
+
+/*==================== BASE ====================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppies',sans-serif;
+}
+
+body {
+    background-color: var(--container-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+div {
+    color: #FFF;
+}
+
+h1 {
+    color: var(--title-color);
+    margin-bottom: 5rem;
+}
+
+p {
+    color: #FFF;
+    font-size: 3rem;
+}
+
+input {
+    width: 90%;
+    height: 30px;
+    display: block;
+    background-color: var(--input-color);
+    border: 1px solid var(--first-color-alt);
+    color: #FFF;
+    
+    margin-bottom: 1.25rem;
+    border-radius: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+label {
+    color: #FFF;
+    margin-bottom: .5rem;
+}
+
+/*==================== CONTAINER ====================*/
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*==================== TIMER CONTENT ====================*/
+.timer-content {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time {
+    font-size: 2rem;
+}
+
+/* Circle Content timer */
+.clock {
+    padding: 3px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    height: 30%;
+    font-size: 24px;
+    margin-bottom: 5rem;
+  }
+.progress-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+  
+.progress-ring__circle {
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke: var(--first-color);
+}
+
+.danger {
+    stroke: rgb(243, 17, 28);
+    animation: pulse 0.9s ease-in-out infinite;
+  }
+
+@keyframes pulse {
+    0%,
+    100% {
+      transform: rotate(-90deg) scale(1);
+    }
+    50% {
+      transform: rotate(-90deg) scale(1.05);
+    }
+    75% {
+      transform: rotate(-90deg) scale(0.8);
+    }
+}
+
+/*==================== CONFIG CONTENT ====================*/
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+/*==================== Buttons ====================*/
+.button {
+    background-color: var(--first-color);
+    color: #FFF;
+    width: 5rem;
+    height: 2rem;
+    border: none;
+    border-radius: 20px;
+    margin: .5rem;
+    
+}
+
+.break {
+    background-color: hsl(var(--hue-color), 30%, 50%);
+    width: 5rem;
+    height: 2rem;
+}
+
+.remove-start {
+    display: none;
+}
+
+.button:hover {
+    background-color: var(--first-color-alt);
+    cursor: pointer;
+}
+
+.button-pause {
+    display: none;
+    background-color: transparent;
+    border: 1px solid var(--first-color);
+    color: #FFF;
+    width: 4rem;
+    height: 1.5rem;
+    border-radius: 20px;
+}
+
+.button-a:hover {
+    cursor: pointer;
+}
+
+.button-settings {
+    width: 100px;
+    background-color: var(--first-color);
+    border-radius: 20px;
+    color: #FFF;
+    border: none;
+}
+
+@media screen and (max-width: 375px) {
+    .form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form {
+        width: 60%;
+    }
+}
