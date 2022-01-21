@@ -2,6 +2,7 @@
 const focusTimeInput = document.querySelector("#focusTime");
 const breakTimeInput = document.querySelector("#breakTime");
 const pauseBtn = document.querySelector(".pause");
+const resetBtn = document.querySelector(".reset");
 
 focusTimeInput.value = localStorage.getItem("focusTime");
 breakTimeInput.value = localStorage.getItem("breakTime");
@@ -14,12 +15,21 @@ document.querySelector("form").addEventListener("submit", (e) => {
   alert('Settings saved successfull!');
 });
 
-document.querySelector(".reset").addEventListener("click", () => {
+pauseBtn.style.transform = 'scale(0)';
+resetBtn.style.transform = 'scale(0)';
+
+resetBtn.addEventListener("click", () => {
   startBtn.style.transform = "scale(1)";
+  startBtn.style.transition = '.3s';
+  resetBtn.style.transform = 'scale(0)';
+  resetBtn.style.transition = '.3s';
+  pauseBtn.style.transform = 'scale(0)';
+  pauseBtn.style.transition = '.3s';
   clearTimeout(initial);
   setProgress(0);
   mindiv.textContent = localStorage.getItem("focusTime");
   secdiv.textContent = "00";
+  pauseBtn.textContent = "Pause";
 });
 
 pauseBtn.addEventListener("click", () => {
@@ -64,10 +74,11 @@ startBtn.addEventListener("click", () => {
   totalsecs = mins * 60;
   setTimeout(decremenT(), 60);
   startBtn.style.transform = "scale(0)";
+  resetBtn.style.transform = "scale(1)";
+  pauseBtn.style.transform = 'scale(1)';
+  
   paused = false;
 });
-
-
 
 function decremenT() {
   mindiv.textContent = Math.floor(seconds / 60);
