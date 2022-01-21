@@ -112,7 +112,7 @@ label {
     transform: translate(-50%, -50%);
  }
   
-.progress-ring__circle {
+.progress-ring-circle {
     transition: 0.5s;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
@@ -168,8 +168,6 @@ label {
     width: 5rem;
     height: 2rem;
 }
-
-
 
 .button:hover {
     background-color: var(--first-color-alt);

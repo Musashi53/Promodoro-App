@@ -75,7 +75,9 @@ startBtn.addEventListener("click", () => {
   setTimeout(decremenT(), 60);
   startBtn.style.transform = "scale(0)";
   resetBtn.style.transform = "scale(1)";
+  resetBtn.style.transition = '.3s';
   pauseBtn.style.transform = 'scale(1)';
+  pauseBtn.style.transition = '.3s';
   
   paused = false;
 });
@@ -115,7 +117,7 @@ function decremenT() {
 }
 
 /*==================== PROGRESS ====================*/
-const circle = document.querySelector(".progress-ring__circle");
+const circle = document.querySelector(".progress-ring-circle");
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 
