@@ -1,6 +1,6 @@
 # Promodoro-App
 
-<p>To view the project: https://promodorotimer-app4.netlify.app/</p>
+<p>To view the project: <a target="_blank">https://promodorotimer-app4.netlify.app/</a></p>
 
 ### Technologies used:
 
